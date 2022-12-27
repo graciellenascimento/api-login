@@ -1,11 +1,11 @@
 const mysql = require('mysql');
 function execSQLQuery(sqlQry, res){
 const connection = mysql.createConnection({
-host : 'localhost',
+host : 'sql.freedb.tech',
 port : '3306',
-user : 'root',
-password : 'Morningmusume46',
-database : 'reactnative'
+user : 'freedb_gracielle',
+password : 'nFRH?rrNF?TP77%',
+database : 'freedb_apilogin'
 });
 
 connection.query(sqlQry, function(error, results, fields){
