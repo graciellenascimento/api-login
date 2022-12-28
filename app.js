@@ -21,7 +21,7 @@ app.get('/clientes', (req, res) =>{
 app.post('/clientes/post', (req, res) =>{
     res.setHeader("Access-Control-Allow-Origin","*");
     res.header('Access-Control-Allow-Methods','GET,PUT,POST,DELETE');
-    return connect.execSQLQuery("insert into atividade (email, senha) values ('"+req.body.email+","+req.body.senha+"')", res);
+    return connect.execSQLQuery("insert into atividade (email, senha) value('"+req.body.email+"','"+req.body.senha+"')", res);
 
 })
 
