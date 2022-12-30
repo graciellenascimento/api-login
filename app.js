@@ -18,6 +18,12 @@ app.get('/clientes/:email&:senha', (req, res) =>{
     return connect.execSQLQuery("select * from atividade where email='"+req.params.email+"' and senha='"+req.params.senha+"'", res);
 })
 
+app.get('/clientes/:email', (req, res) =>{
+    res.setHeader("Access-Control-Allow-Origin","*");
+    res.header('Access-Control-Allow-Methods','GET,PUT,POST,DELETE');
+    return connect.execSQLQuery("select * from atividade where email='"+req.params.email+"'", res);
+})
+
 app.post('/clientes/post', (req, res) =>{
     res.setHeader("Access-Control-Allow-Origin","*");
     res.header('Access-Control-Allow-Methods','GET,PUT,POST,DELETE');
