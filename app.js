@@ -6,11 +6,11 @@ const app = express();
 app.use(express.json());
 app.use(express.urlencoded({extended: true}));
 
-app.get('/', (req, res) => {
-    res.send('Para acessar todos os dados, vá em /clientes; para visualizar separadamente vá em clientes/:id; para editar, siga para /clientes/put/:id; inserir, /clientes/post/:id e deletar, /clientes/delete/:id')
-    res.end()
+app.get('/clientes', (req, res) =>{
+    res.setHeader("Access-Control-Allow-Origin","*");
+    res.header('Access-Control-Allow-Methods','GET,PUT,POST,DELETE');
+    return connect.execSQLQuery("select * from atividade", res);
 })
-
 
 app.get('/clientes/:email&:senha', (req, res) =>{
     res.setHeader("Access-Control-Allow-Origin","*");
